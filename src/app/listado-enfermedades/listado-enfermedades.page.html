@@ -1,0 +1,78 @@
+<ion-header color="primary">
+  <div>
+    <ion-toolbar color="primary">
+      <ion-title>
+        <ion-row style="text-align: center;">
+          <ion-col style="text-align: center;">
+            <img src="./assets/icon/vacuna_icono.png" style="width: 100px; height: 100px;">
+          </ion-col>
+        </ion-row>
+      </ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <!-- FUNCION AGREGAR -->
+
+  <ion-fab
+    vertical="top"
+    horizontal="end"
+    slot="fixed">
+    <ion-fab-button
+      style="width: 25px; height: 25px; margin-top: -40px;"
+      (click)="onNuevo()" color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-searchbar animated (ionChange)="buscar( $event )" placeholder="Buscar enfermedad"></ion-searchbar>
+
+    <div>
+      <!-- | filtro-Consulta: textoBuscar -->
+
+      <ion-item *ngFor="let item of enfermedades | filtrado: textoBuscar" color="secondary">
+        <ion-label>
+          <ion-label class="ion-text-wrap label">
+            <strong>Enfermedad:</strong>
+          </ion-label>
+
+          <ion-label class="ion-text-wrap label">{{ item.nombre_enfermedad}}</ion-label>
+
+          <ion-label class="ion-text-wrap label">
+            <strong>Vacuna</strong>
+
+            {{ item.vacuna}}
+          </ion-label>
+
+          <ion-label class="ion-text-wrap label">
+            <strong>Descripción</strong>
+
+            {{ item.descripcion}}
+          </ion-label>
+        </ion-label>
+
+        <ion-button
+          slot="end"
+          color="tertiary"
+          
+          (click)="editar(item)"
+          shape="round"
+        >
+        <ion-icon name="brush-sharp"></ion-icon>
+        </ion-button>
+
+        <ion-button
+          slot="end"
+          color="tertiary"
+          
+          (click)="eliminar(item)"
+          shape="round"
+        >
+        <ion-icon name="trash-sharp"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,110 @@
+<ion-header>
+  
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref="home"></ion-back-button>
+  
+    </ion-buttons>
+
+
+  <ion-title>
+
+    <ion-row style="text-align: center;">
+     
+      <ion-col style="text-align: center;">
+
+        <img src="./assets/icon/vacuna_icono.png" style="width: 100px; height: 100px;" >
+      
+      </ion-col>
+   
+    </ion-row>
+ 
+  </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content color="secondary">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-list>
+              <ion-list-header>
+                <ion-label> </ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-icon name="medkit-outline"></ion-icon>
+                </ion-avatar>
+                <ion-label position="floating">Vacuna</ion-label>
+                <ion-input type="text" [(ngModel)]="mVacuna" ></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-icon name="alarm-outline"></ion-icon>
+                </ion-avatar>
+                <ion-label position="floating">Hora</ion-label>
+                <ion-input type="time" displayFormat="HH:mm"  [(ngModel)]="mHora" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-icon name="menu-outline"></ion-icon>
+                </ion-avatar>
+                <ion-label position="floating">Número de Lote</ion-label>
+                <ion-input type="number" [(ngModel)]="mNumeroLote"></ion-input>
+              </ion-item>              
+              
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-icon name="list-outline"></ion-icon>
+                </ion-avatar>
+                <ion-label position="floating">Número de Dosis</ion-label>
+                <ion-input type="number" [(ngModel)]="mNumeroDosis"></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-icon name="list-outline"></ion-icon>
+                </ion-avatar>
+                <ion-label position="floating">Dosis Actual</ion-label>
+                <ion-input type="number" [(ngModel)]="mDosisActual"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-icon name="checkbox-outline"></ion-icon>
+                </ion-avatar>
+                <ion-label position="floating">Última Aplicación</ion-label>
+                <ion-input type="date" displayFormat="DD/MM/YYYY"  [(ngModel)]="mUltimaAplicacion" required></ion-input>
+              </ion-item>
+              
+
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                </ion-avatar>
+                <ion-label position="floating">Siguiente Aplicacion</ion-label>
+                <ion-input  type="date" display-format=" DD/MM/YYYY" 
+                   [(ngModel)]="mSiguienteAplicacion"  [ngModelOptions]="{standalone: true}" required></ion-input>
+              </ion-item>
+
+          </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="onGuardar()"> 
+                Guardar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

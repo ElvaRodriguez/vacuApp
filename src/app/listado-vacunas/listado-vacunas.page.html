@@ -1,0 +1,78 @@
+<ion-header color="primary">
+  <div>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-row style="text-align: center;"> 
+        <ion-col style="text-align: center;">
+           <img src="./assets/icon/vacuna_icono.png" style="width: 100px; height: 100px;">
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content color="secondary">
+  <!-- FUNCION AGREGAR -->
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+ <ion-fab-button style="width: 25px; height: 25px; margin-top: -40px;" (click)="onNuevo()" color="tertiary"> 
+   <ion-icon name="add"></ion-icon>
+ </ion-fab-button>
+ </ion-fab>
+
+ <ion-list>  
+   <ion-searchbar animated (ionChange)= "buscar( $event )" placeholder="Buscar por Vacuna"></ion-searchbar>
+
+   <div>
+
+    <!-- | filtro: buscarVacuna -->
+    
+     <ion-item  *ngFor= "let item of vacunas | filtro: textoBuscar"> <!-- Aca tenes que recorrer tu lista-->
+      
+       <ion-label>
+         <ion-label class="ion-text-wrap label"><strong>Vacuna:</strong></ion-label>
+         <ion-label class="ion-text-wrap label">
+                       {{ item.nombre}}
+           </ion-label>
+         <ion-label class="ion-text-wrap label"><strong>Número de Lote:</strong> {{ item.numero_lote}}</ion-label>
+         <ion-label class="ion-text-wrap label"><strong>Número de Dosis</strong> {{ item.numero_dosis}}</ion-label>
+         <ion-label class="ion-text-wrap label"><strong>Dosis Actual</strong> {{ item.dosis_actual}}</ion-label>
+         <ion-label class="ion-text-wrap label"><strong>Hora:</strong> {{ item.hora}}</ion-label>
+         <ion-label class="ion-text-wrap label"><strong>Ultima Aplicación</strong> {{ item.ultima_aplicacion}}</ion-label>
+         <ion-label class="ion-text-wrap label"><strong>Siguiente Aplicación</strong> {{ item.siguiente_aplicacion}}</ion-label>
+
+       </ion-label>
+
+       <ion-button 
+             slot="end" 
+             color="tertiary"
+             
+             (click)="editar(item)" 
+             shape="round"> <ion-icon name="brush-sharp"></ion-icon>
+       </ion-button>
+
+ <!-- cancelar alarma-->
+
+       <ion-button 
+           slot="end" 
+           color="tertiary"
+           
+           (click)="cancelar()" 
+           shape="round" > <ion-icon name="hourglass-sharp"></ion-icon>
+       </ion-button> 
+
+       <ion-button 
+           slot="end" 
+           color="tertiary"
+           
+           (click)="eliminar(item)" 
+           shape="round" ><ion-icon name="trash-sharp"></ion-icon>
+       </ion-button>
+
+     </ion-item>
+   </div>
+</ion-list>
+
+
+
+</ion-content>

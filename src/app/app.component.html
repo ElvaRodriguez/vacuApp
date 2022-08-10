@@ -1,3 +1,42 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start" menuId="custom" class="my-custom-menu" contentId="main">
+    <ion-header>
+      <ion-toolbar color="secondary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+          <br>
+        <ion-item (click)="irUsuario(item)"> 
+          <ion-icon color="tertiary" name="person-circle-outline"></ion-icon> Usuario</ion-item>
+            <br>
+
+            <br>
+        <ion-item (click)="irVacuna()"> 
+          <ion-icon color="tertiary" name="medkit-sharp"></ion-icon> Vacunas </ion-item>
+            <br>
+            
+            <br>
+            <ion-item (click)="irEnfermedad()"> 
+            <ion-icon color="tertiary" name="medkit-sharp"></ion-icon> Enfermedades </ion-item>
+            <br>
+            
+          <br>
+        <ion-item (click)="irGeolocation()"> 
+          <ion-icon color="tertiary" name="earth-sharp"></ion-icon> GPS </ion-item>
+            <br>
+
+            <br>
+        <ion-item (click)="cerrarSesion()">
+          <ion-icon color="tertiary" name="close-circle-sharp"></ion-icon> Cerrar Sesion </ion-item>  
+           <br> 
+           
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

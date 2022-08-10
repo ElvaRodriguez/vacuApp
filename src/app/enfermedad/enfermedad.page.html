@@ -1,0 +1,80 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button color="tertiary" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <ion-row style="text-align: center;">
+        <ion-col style="text-align: center;">
+          <img
+            src="./assets/icon/logo1.jpeg"
+            style="width: 100px; height: 100px;"
+          >
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-list-header>
+            <ion-label></ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-icon name="heart-dislike-outline"></ion-icon>
+            </ion-avatar>
+
+            <ion-label position="floating">Enfermedad</ion-label>
+
+            <ion-input
+              type="text"
+              [(ngModel)]="mEnfermedad"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-icon name="bandage-outline"></ion-icon>
+            </ion-avatar>
+
+            <ion-label position="floating">Vacuna</ion-label>
+
+            <ion-input
+              type="text"
+              [(ngModel)]="mVacuna"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-icon name="newspaper-outline"></ion-icon>
+            </ion-avatar>
+
+            <ion-label position="floating">Descripción</ion-label>
+
+            <ion-input
+              type="text"
+              [(ngModel)]="mDescripcion"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary"
+          expand="block"
+          (click)="onGuardar()"
+        >Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

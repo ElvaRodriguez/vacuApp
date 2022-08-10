@@ -1,0 +1,70 @@
+<ion-header>
+  
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref="home"></ion-back-button>
+  
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <div style="margin-top: 10px;"> 
+      <ion-row style="text-align: center;"> 
+        <ion-col style="text-align: center;"> 
+           <img src="./assets/icon/vacuna_icono.png" style="width: 70px">
+        </ion-col>
+      </ion-row>
+    </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-list>
+
+              <ion-item>
+                
+                <ion-label position="floating">Nombre</ion-label>
+                <ion-input type="text" [(ngModel)]="nombre" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                
+                <ion-label position="floating">Correo</ion-label>
+                <ion-input type="text" [(ngModel)]="correo" 
+                  pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" 
+                  required ></ion-input>
+              </ion-item>
+
+              <ion-item>
+               
+                <ion-label position="floating"> Contraseña </ion-label>
+                <ion-input type="password" [(ngModel)]="password" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                
+                <ion-label position="floating"> Repetir Contraseña</ion-label>
+                <ion-input type="password" [(ngModel)]="passwordRep" required></ion-input>
+              </ion-item>
+
+          </ion-list>        
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="onGuardar()"> 
+                Guardar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

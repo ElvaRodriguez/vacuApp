@@ -1,5 +1,7 @@
 {
   "name": "vacuApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,43 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content style="top: 50px;">
+  <div style="text-align: center; ">
+  <ion-row style="text-align: center;"> 
+    <ion-col style="text-align: center;"> 
+       <img src="./assets/icon/vacuna_icono.png" style="width: 70px">
+    </ion-col>
+  </ion-row>
+
+  <p></p>
+
+  <ion-list>
+    <br>
+<ion-item>
+<img src="./assets/icon/correo_icono.png" style="width: 30px"> 
+<ion-input type="text" [(ngModel)]="email" placeholder="  Ingrese correo"
+pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"> </ion-input>  
+</ion-item>
+<br>
+
+<br>
+<ion-item>
+  <img src="./assets/icon/pass_icono.png" style="width: 30px"> 
+  <ion-input type="password" [(ngModel)]="password" placeholder="  Ingrese password"></ion-input>  
+  </ion-item>
+  <br>
+
+</ion-list>
+<div style="text-align: center;">
+  <p></p>
+<ion-button (click)="login()" style="margin-top: 40px;">Iniciar Sesion</ion-button> 
+<p></p>
+<a (click)="onRegistrarse()"> Registrarse</a> 
+<p></p>
+<a (click)="forgotPass()"> Olvidaste la contraseña ? </a> 
+
+ 
+</div>
+</div>
+</ion-content>

@@ -10,9 +10,9 @@ export class FiltradoPipe implements PipeTransform {
         if(texto === ''){
           return arreglo;
         }
-    
         texto = texto.toLowerCase();
-        return arreglo.filter(item => {
+        
+        return arreglo.filter(item =>{
           var dato = item.nombre_enfermedad;
           return dato.toLowerCase()
           .includes(texto);

@@ -15,4 +15,4 @@ import { FiltradoPipe } from "./filtrado.pipe";
     ]
 })
 
-export class PipesModule{}
+export class PipesModule { }

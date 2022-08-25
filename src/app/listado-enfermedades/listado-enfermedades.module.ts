@@ -8,14 +8,14 @@ import { ListadoEnfermedadesPageRoutingModule } from './listado-enfermedades-rou
 
 import { ListadoEnfermedadesPage } from './listado-enfermedades.page';
 
-import { FiltradoPipe } from '../pipes/filtrado.pipe';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FiltradoPipe,
+    PipesModule,
     ListadoEnfermedadesPageRoutingModule
   ],
   declarations: [ListadoEnfermedadesPage]

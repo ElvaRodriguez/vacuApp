@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./listado-enfermedades/listado-enfermedades.module').then( m => m.ListadoEnfermedadesPageModule)
   },
   {
-    path: 'registro',
+    path: 'registro/:id',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
   {

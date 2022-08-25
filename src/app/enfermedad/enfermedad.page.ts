@@ -14,6 +14,7 @@ export class EnfermedadPage implements OnInit {
   mEnfermedad;
   mVacuna;
   mDescripcion;
+  mPrecausion;
 
   constructor(public servicio: ServicioService, public router: Router, public toastCtrol: ToastController,
     private ruta: ActivatedRoute) { }
@@ -28,6 +29,7 @@ export class EnfermedadPage implements OnInit {
           this.mEnfermedad = res['enfermedad'].nombre_enfermedad;
           this.mVacuna = res['enfermedad'].vacuna;
           this.mDescripcion = res['enfermedad'].descripcion;
+          this.mPrecausion = res['enfermedad'].precausion;
         });
       }
     });
@@ -39,6 +41,7 @@ export class EnfermedadPage implements OnInit {
       nombre_enfermedad: this.mEnfermedad,
       vacuna: this.mVacuna,
       descripcion: this.mDescripcion,
+      precausion: this.mPrecausion
     }
     if(this.mid){
       this.servicio.updateEnfermedad(dataEnfermedad, this.mid).subscribe( res => {

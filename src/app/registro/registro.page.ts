@@ -28,6 +28,7 @@ export class RegistroPage implements OnInit {
         this.servicio.getUsuarioByID(params.id).subscribe( res => {
           this.codigo = res['usuario'].id_usurio;
           this.nombre = res['usuario'].nombre;
+          this.correo = res['usuario'].correo;
           this.password = res['usuario'].password;
           this.passwordRep = res['usuario'].password;
         });

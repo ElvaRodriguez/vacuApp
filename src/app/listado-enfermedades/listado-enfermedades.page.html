@@ -27,30 +27,25 @@
   </ion-fab>
 
   <ion-list>
-    <ion-searchbar animated (ionChange)="buscar( $event )" placeholder="Buscar enfermedad"></ion-searchbar>
+    <ion-searchbar animated (ionChange)= "buscar( $event )" placeholder="Buscar enfermedad"></ion-searchbar>
 
     <div>
       <!-- | filtro-Consulta: textoBuscar -->
 
-      <ion-item *ngFor="let item of enfermedades | filtrado: textoBuscar" color="secondary">
+      <ion-item *ngFor="let item of enfermedades">
+        
         <ion-label>
-          <ion-label class="ion-text-wrap label">
-            <strong>Enfermedad:</strong>
-          </ion-label>
 
-          <ion-label class="ion-text-wrap label">{{ item.nombre_enfermedad}}</ion-label>
+          <ion-label class="ion-text-wrap label"><strong>Enfermedad:</strong></ion-label>
 
-          <ion-label class="ion-text-wrap label">
-            <strong>Vacuna</strong>
+          <ion-label class="ion-text-wrap label">{{ nombre_enfermedad}}</ion-label>
 
-            {{ item.vacuna}}
-          </ion-label>
+          <ion-label class="ion-text-wrap label"><strong>Vacuna</strong>{{ vacuna}}</ion-label>
 
-          <ion-label class="ion-text-wrap label">
-            <strong>Descripción</strong>
+          <ion-label class="ion-text-wrap label"><strong>Descripcion</strong>{{ descripcion}}</ion-label>
 
-            {{ item.descripcion}}
-          </ion-label>
+          <ion-label class="ion-text-wrap label"><strong>Prevencion</strong>{{ precausion}}</ion-label>
+
         </ion-label>
 
         <ion-button
@@ -58,9 +53,7 @@
           color="tertiary"
           
           (click)="editar(item)"
-          shape="round"
-        >
-        <ion-icon name="brush-sharp"></ion-icon>
+          shape="round"><ion-icon name="brush-sharp"></ion-icon>
         </ion-button>
 
         <ion-button
@@ -68,11 +61,12 @@
           color="tertiary"
           
           (click)="eliminar(item)"
-          shape="round"
-        >
-        <ion-icon name="trash-sharp"></ion-icon>
+          shape="round"><ion-icon name="trash-sharp"></ion-icon>
+        
         </ion-button>
+
       </ion-item>
     </div>
   </ion-list>
+
 </ion-content>

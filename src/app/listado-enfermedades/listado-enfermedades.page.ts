@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../servicio.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { MenuController, ToastController, AlertController, NavParams } from '@ionic/angular';
+import { MenuController, ToastController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-listado-enfermedades',
@@ -11,13 +11,13 @@ import { MenuController, ToastController, AlertController, NavParams } from '@io
 export class ListadoEnfermedadesPage implements OnInit {
 
   enfermedades;
-  textoBuscar;
+  textoBuscar = '';
 
   constructor(public servicio: ServicioService, public router: Router, private ruta: ActivatedRoute,
     public toastCrl: ToastController, public alertContrller: AlertController, public menu: MenuController) { }
 
   ngOnInit() {
-  }
+}
 
   ionViewWillEnter(){
     this.onListado();
@@ -29,16 +29,17 @@ export class ListadoEnfermedadesPage implements OnInit {
   }
 
   onListado(){
-    this.ruta.params.subscribe((params: Params) => {
-      this.servicio.getListaEnfermedad().subscribe( res => {
-        this.enfermedades = res['enfermedadlista'];
-        console.log(res)
+    this.ruta.params.subscribe((params: Params) =>{
+      this.servicio.getListaEnfermedad().subscribe(res =>{
+        this.enfermedades=res['result'];
+        this.enfermedades = Array.of(this.enfermedades);
+        console.log(res);
       });
     });
   }
 
   onNuevo(){
-    this.router.navigate(['/enfermedad'])
+    this.router.navigate(['/enfermedad', 0])
   }
 
   eliminar(item){

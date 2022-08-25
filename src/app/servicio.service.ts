@@ -20,7 +20,7 @@ export class ServicioService {
   }
 
   addUsuario(dataUsuario){
-    return this.http.post(environment.url + 'usuario', dataUsuario)
+    return this.http.post(environment.url + 'usuarios', dataUsuario)
   }
 
   deleteUsuario(id){

@@ -29,13 +29,10 @@ export class ListadoEnfermedadesPage implements OnInit {
   }
 
   onListado(){
-    this.ruta.params.subscribe((params: Params) =>{
       this.servicio.getListaEnfermedad().subscribe(res =>{
-        this.enfermedades=res['result'];
-        this.enfermedades = Array.of(this.enfermedades);
+        this.enfermedades=res;
         console.log(res);
       });
-    });
   }
 
   onNuevo(){

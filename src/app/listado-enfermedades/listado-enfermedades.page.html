@@ -32,19 +32,17 @@
     <div>
       <!-- | filtro-Consulta: textoBuscar -->
 
-      <ion-item *ngFor="let item of enfermedades">
+      <ion-item *ngFor="let item of enfermedades | filtrado: textoBuscar">
         
         <ion-label>
 
-          <ion-label class="ion-text-wrap label"><strong>Enfermedad:</strong></ion-label>
+          <ion-label class="ion-text-wrap label"><strong>Enfermedad:</strong> {{ item.nombre_enfermedad}}</ion-label>
 
-          <ion-label class="ion-text-wrap label">{{ nombre_enfermedad}}</ion-label>
+          <ion-label class="ion-text-wrap label"><strong>Vacuna: </strong> {{ item.vacuna}}</ion-label>
 
-          <ion-label class="ion-text-wrap label"><strong>Vacuna</strong>{{ vacuna}}</ion-label>
+          <ion-label class="ion-text-wrap label"><strong>Descripcion: </strong> {{ item.descripcion}}</ion-label> 
 
-          <ion-label class="ion-text-wrap label"><strong>Descripcion</strong>{{ descripcion}}</ion-label>
-
-          <ion-label class="ion-text-wrap label"><strong>Prevencion</strong>{{ precausion}}</ion-label>
+          <ion-label class="ion-text-wrap label"><strong>Prevencion: </strong> {{ item.precausion}} </ion-label> 
 
         </ion-label>
 
